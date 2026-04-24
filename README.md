@@ -34,8 +34,6 @@ A **CarFactory** is responsible for creating cars by engine type and for replaci
 
 - **Internal Gas and Electric engine implementations are assumed correct** and are not tested in isolation (per the assignment note).
 
-- **No thread safety, fuel levels, battery levels, or persistence** are modelled — this is a purely behavioural simulation.
-
 ---
 
 ## Class Diagram
