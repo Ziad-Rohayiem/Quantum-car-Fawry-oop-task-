@@ -31,7 +31,7 @@ public class Car {
             System.out.println("[Car] Already at max speed (" + MAX_SPEED + " km/h). Cannot accelerate.");
             return;
         }
-        int steps = Math.min(SPEED_STEP, MAX_SPEED - current);
+        int steps = Math.min(SPEED_STEP, MAX_SPEED - current); // use case: if current speed is 190, steps will be 10 (this may happen if we used smth like sleep() to simulate the behaviour)
         System.out.println("[Car] Accelerating by " + steps + " km/h...");
         for (int i = 0; i < steps; i++) {
             engine.increase();
@@ -45,7 +45,7 @@ public class Car {
             System.out.println("[Car] Already stopped. Cannot brake further.");
             return;
         }
-        int steps = Math.min(SPEED_STEP, current);
+        int steps = Math.min(SPEED_STEP, current); // use case: if current speed is 10, steps will be 10 (this may happen if we used smth like sleep() to simulate the behaviour)
         System.out.println("[Car] Braking by " + steps + " km/h...");
         for (int i = 0; i < steps; i++) {
             engine.decrease();
