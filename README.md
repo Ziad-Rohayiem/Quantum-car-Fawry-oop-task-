@@ -24,11 +24,9 @@ A **CarFactory** is responsible for creating cars by engine type and for replaci
 
 - **The car only ever rests at multiples of 20** (0, 20, 40 … 200). Intermediate integer speeds exist transiently during an operation but are never a stable state.
 
-- **The HybridEngine owns the single source-of-truth speed field.** Its Gas and Electric sub-engines are pure actuators — they execute increase/decrease but do not own speed themselves.
+- **The HybridEngine owns the single source-of-truth speed field.** Its Gas and Electric sub-engines are pure actuators, they just execute increase/decrease but do not own speed themselves.
 
 - **The Hybrid threshold check happens on every individual `increase()`/`decrease()` call**, not once per `accelerate()`/`brake()` invocation. This allows the engine switch to occur mid-operation when crossing 50 km/h.
-
-- **The engine switch in the Hybrid is instantaneous and seamless.** There is no ramp-up for the incoming engine and no ramp-down for the outgoing one — speed continues uninterrupted from the HybridEngine's field.
 
 - **The CarFactory is the sole place where engines are instantiated.** No engine is constructed directly outside the factory.
 
