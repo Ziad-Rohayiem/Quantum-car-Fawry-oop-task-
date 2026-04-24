@@ -38,6 +38,12 @@ A **CarFactory** is responsible for creating cars by engine type and for replaci
 
 ---
 
+## Class Diagram
+
+![Class Diagram](classDiagram.png)
+
+---
+
 ## Project Structure
 
 ```
